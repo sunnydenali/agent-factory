@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+.factory/state.json
+.factory/state.tmp
+.coverage
+.venv/
