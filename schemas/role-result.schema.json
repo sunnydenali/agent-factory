@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agent Factory role result",
+  "type": "object",
+  "required": ["role", "artifact_id", "status", "outputs", "validation", "errors"],
+  "properties": {
+    "role": {"type": "string", "enum": ["requirements", "architecture", "engineering", "review", "release"]},
+    "artifact_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,63}$"},
+    "status": {"type": "string", "enum": ["completed", "blocked", "failed"]},
+    "outputs": {"type": "array", "items": {"type": "string"}},
+    "validation": {"type": "array", "items": {"type": "string"}},
+    "errors": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
